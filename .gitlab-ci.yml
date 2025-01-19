@@ -1,0 +1,13 @@
+stages:
+  - test
+
+cypress_tests:
+  image: cypress/included:12.12.0
+  stage: test
+  script:
+    - echo "Installing dependencies..."
+    - npm install
+    - echo "Running Cypress tests..."
+    - npx cypress run
+  only:
+    - main
